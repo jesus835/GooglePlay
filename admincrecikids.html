@@ -332,11 +332,11 @@
     <div class="main-content">
         <!-- Header de la app -->
         <div class="app-header">
-            <img src="images/logoplay.png" alt="Crecikids" class="app-icon">
+            <img src="images/logoadmin.png" alt="Crecikids" class="app-icon">
             <div class="app-info">
-                <h1 class="app-name">Crecikids</h1>
+                <h1 class="app-name">Crecikids Admin</h1>
                 <a href="#" class="developer">CodexGT</a>
-                <div class="category">App de Control de peso</div>
+                <div class="category">App Administrativa</div>
             </div>
         </div>
 
@@ -345,14 +345,14 @@
             <div class="stat-item">
                 <div class="stat-value">
                     <div class="rating">
-                        <span>4.9</span>
+                        <span>5.0</span>
                         <span class="star">★</span>
                     </div>
                 </div>
-                <div class="stat-label">40 opiniones</div>
+                <div class="stat-label">0 opiniones</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value" id="download-count">10</div>
+                <div class="stat-value" id="download-count">2</div>
                 <div class="stat-label">Descargas</div>
             </div>
             <div class="stat-item">
@@ -367,7 +367,7 @@
 
         <!-- Botones -->
         <div class="buttons-section">
-            <button class="primary-button" onclick="incrementDownloadCount()">Descargar</button>
+            <button class="primary-button" onclick="incrementDownloadCount(); downloadAPK();">Descargar</button>
             <button class="secondary-button">control de peso</button>
             <div class="action-buttons">
                 <button class="action-button">
@@ -390,8 +390,8 @@
     <script>
         // Función para incrementar el contador de descargas
         function incrementDownloadCount() {
-            // Obtener el contador actual del localStorage o usar 10 como valor inicial
-            let currentCount = parseInt(localStorage.getItem('downloadCount')) || 10;
+            // Obtener el contador actual del localStorage o usar 2 como valor inicial
+            let currentCount = parseInt(localStorage.getItem('downloadCount')) || 2;
             
             // Incrementar el contador
             currentCount++;
@@ -402,13 +402,24 @@
             // Actualizar el display
             document.getElementById('download-count').textContent = currentCount;
             
-            // Redirigir al enlace de descarga
-            window.location.href = 'https://googleplay-apps.netlify.app/crecikids.apk';
+            // Descarga manejada por downloadAPK()
+        }
+        
+        // Forzar descarga del APK desde Google Drive
+        function downloadAPK() {
+            const apkUrl = 'https://public.boxcloud.com/d/1/b1!yjsT1z8EDxrV9tXt9n1I2Cq7NoKreQ4icsuNbRdQlBUWIFmxLuSc5b5p-ZmqQHWMe2t8CRawpvG9Lm3vEVSVGs-XGLupyLTLg1Lb9Dh8SetLmFfp2t1wFii2iMHJY0VaoNai41hmI0nUOUSYwiesTT0sqikqR6Rez8XWxsRS55Gg9mn_uVV33l-c9eOhc0VskVE7m83_uDSbjgVGhOrkLpu1gGYHixISaVKZE3_f9YS_-dL_KrSF8aJsNWJC_jei6LLxL3QHNltdWE1JDBef0tI2cotQzrVFOcGHVWNXSUmcgJo3GrjCUOfjF0rhts_pvGEbdkMSE0W67yYQMIhc-rFLroODZds55k7kUSxbXl72hk8Sxotf_b-rBjQvlAEyNYOKxe6xlEHLYtt6FwEj1B0jJhem4RchJuGSq8hro6ILUWhx5sssUiUXCF2xqrNkEzYrU_aiJh7K2bcnYzYHqsfYgLu29-BM4E0KNfmfj6Ero0HvSWGK7ZZHWYCQLwE79tdhALNgMNHUOV_4GQPY6vxN4TVcHELAtJDz3CPuwnooeNK4brPjQ7TvYiYsVjIwBRsbT6dP4LFUMmX_MAjSgQfUHk2TmBJFG7-6OitB6L-Wd8Y-xhSZugQZ3sJSHuSeHR4oXvxLoVmCwxlUg0uPPkL7Oyzrf2SovoRjDEPGVV08PWuU0ZiL0Y6O2xjiumdlUuUKsvwbWfr6jBpcpZIRsb-IcWDtYIn6SVWm1l0WDIEWohHyR-_Bcn5gKS35BxKELVoM-cX7S4EgwPUSmPtT0mMf1psdSN1VbYfkYxFdFt2meSaljGVXmQ-KEaIvYVJjynYDtSj8zJzsAIcciMNzsFeFe-APMtIRg9Xn6d2O8MJbbLCFyZZWFXqEZF2LsVYnbTiGP6a0wvfTINcnahTU3_e5ElEaWa3iu4e0gpxvCwdiC_1Pqce33YAEI3UNAasZFY4NmePWhknRqYggIrZ5AB_jsUQpbJk0UcqXOcWIj0lhi7O6oDflJlKX0O1j5lBJoL2EOzvLD3kh8r9gdDrmsnMb0SdjuMY5s6R-bC1CZHu7pJy9NTDnRSyJwdMc2khcEDormMoz_cZ0Xiac_xMbTwg7cvpmAtii5yr1l3vd2CShmQHlujx_D3KOWCP1Erzxsfm33xZR_GfQuMyBCWIa8xTr46IvncJzaibTDvrSLS_yAEpyOYemVF0X1uNKRWvev4lPJfRfPOW3yxYJG7HnqOnlahB5hsx_tS-yU3s8AjwTp84DH52cvOC5Ia5jppo1NNLYd95amxXZ5JgjZdLubWp7UO_1M9aSCnAMoF2nUga3IQCPU5boVjUh_i1Du40ddxsCg67nNT4KlgSaMqWYSMfK436JmRmr7Ijl8ljqh2bu0qQdRY0EvfY08tDrv5eeF5KQ5_fyz97dh5qSdqaQjT21sdCe0IpfEpSc-8E9tQETm6NPbQIAp92qMCYnpyjOgiI_/download';
+            const link = document.createElement('a');
+            link.href = apkUrl;
+            link.download = 'Crecikids_Admin.apk';
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
         
         // Cargar el contador guardado al cargar la página
         document.addEventListener('DOMContentLoaded', function() {
-            let savedCount = parseInt(localStorage.getItem('downloadCount')) || 10;
+            let savedCount = parseInt(localStorage.getItem('downloadCount')) || 2;
             document.getElementById('download-count').textContent = savedCount;
         });
     </script>
